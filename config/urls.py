@@ -16,7 +16,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     path("test/", TestView.as_view()),
-    path("", include("blog.urls")),
+    path("blog/", include("blog.urls")),
    
 ]
 
