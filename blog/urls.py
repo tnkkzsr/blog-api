@@ -9,5 +9,7 @@ from . import views
 urlpatterns = [
    #講座続き
    path("posts/",views.PostListCreateView.as_view()),
-   path("post/<uuid:pk>/",views.PostRetrieveUpdateDestroyView.as_view()),   
+   path("post/<uuid:pk>/",views.PostRetrieveUpdateDestroyView.as_view()),
+   path("categories/",views.CategoryListCreateView.as_view()),
+   
 ]

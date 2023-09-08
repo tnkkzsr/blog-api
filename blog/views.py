@@ -5,8 +5,8 @@ from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny,IsAuthenticated,IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 
-from .models import Post
-from .serializers import PostSerializer
+from .models import Post,Category
+from .serializers import PostSerializer,CategorySerializer
 
 
 class PostListCreateView(ListCreateAPIView):
@@ -15,7 +15,11 @@ class PostListCreateView(ListCreateAPIView):
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
     
-
+class CategoryListCreateView(ListCreateAPIView):
+    
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
     
 class PostRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
 
